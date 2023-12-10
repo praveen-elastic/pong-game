@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong Game</title>
+    <style>
+        body{
+            background-color: dimgray;
+            margin: 0;
+            overflow: hidden; /* Prevent horizontal scrollbars */
+        }
+        #gameContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vv; /* Use full viewport height */
+        }
+        #pong{
+            border: 2px solid #FFF;
+            position: absolute;
+            margin :auto;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+        }
+        #scoreContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        #scoreLabel {
+            margin-right: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+        #scoreLimitInput {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+        }
+        #startBtn, #pauseBtn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #startBtn {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        #pauseBtn {
+            display: none;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        #startBtn:hover {
+            background-color: #27ae60;
+        }
+
+        #pauseBtn:hover {
+            background-color: #2c779a;
+        }
+
+        #startBtn:active {
+            background-color: #229954;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #pauseBtn:active {
+            background-color: #24637a;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            #gameContainer {
+                flex-direction: column; /* Stack elements vertically on small screens */
+            }
+            #pauseBtn, #startBtn {
+                flex-basis: 100%; /* Make buttons full width on small screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="scoreContainer">
+            <label id="scoreLabel" for="scoreLimitInput">Score Limit:</label>
+            <input type="number" id="scoreLimitInput" placeholder="Enter Score Limit">
+        </div>
+        <button id="pauseBtn">Pause/Resume</button>
+        <button id="startBtn">Start Game</button>
+        <canvas id="pong" width="600" height="400"></canvas>
+    </div>
+   <script src="ping_pong.js"></script>
+</body>
+</html>
